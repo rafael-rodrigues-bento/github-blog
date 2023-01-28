@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const ProfileContainer = styled.div`
   display: flex;
   gap: 3.2rem;
-  margin: 4.6rem auto;
   padding: 4rem 3.2rem;
   max-width: 86rem;
   height: 21.2rem;
+  border-radius: 10px;
 
   background: ${({ theme }) => theme["base-profile"]};
 
@@ -42,6 +42,11 @@ export const ProfileInfo = styled.div`
       line-height: 160%;
 
       text-decoration: none;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid ${({ theme }) => theme.blue};
+      }
     }
   }
 
