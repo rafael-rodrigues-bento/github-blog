@@ -10,6 +10,7 @@ interface userProps {
   name: string
   company: string
   login: string
+  html_url: string
 }
 
 export function Profile() {
@@ -17,9 +18,9 @@ export function Profile() {
 
   async function fetchUser() {
     const response = await api.get("/users/rafael-rodrigues-bento")
-    const { avatar_url: avatar, followers, bio, name, company, login } = response.data
+    const { avatar_url: avatar, followers, bio, name, company, login, html_url } = response.data
 
-    setUser({ avatar, followers, bio, name, company, login })
+    setUser({ avatar, followers, bio, name, company, login, html_url })
   }
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export function Profile() {
       <ProfileInfo>
         <div>
           <h2>{user?.name}</h2>
-          <a href="github.com">GITHUB <ArrowSquareOut size={18} /></a>
+          <a target="_blank" href={user?.html_url}>GITHUB <ArrowSquareOut size={18} /></a>
         </div>
 
         <div>

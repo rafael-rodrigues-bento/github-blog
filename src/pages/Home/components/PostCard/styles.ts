@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.button`
+  border: none;
+  background: transparent;
+`
+
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,11 +32,11 @@ export const CardContainer = styled.div`
       font-size: 2rem;
       line-height: 160%;
       color: ${({ theme }) => theme["base-title"]};
-      max-width: 75%;
+      max-width: 70%;
     }
 
     > span {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       line-height: 200%;
       color: ${({ theme }) => theme["base-span"]};
     }
@@ -41,5 +46,10 @@ export const CardContainer = styled.div`
       font-size: 1.6rem;
       line-height: 160%;
       color: ${({ theme }) => theme["base-text"]};
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+     -webkit-box-orient: vertical;
     }
 `
